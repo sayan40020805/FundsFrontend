@@ -11,26 +11,29 @@
   margin: 0 auto;
   background: linear-gradient(90deg, #1e293b 60%, #38bdf8 100%);
   color: #e2e8f0;
-  padding: 0 5vw;
-  height: 70px;
+  padding: 0 40px;
+  height: 72px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   position: sticky;
   top: 0;
   z-index: 1000;
-  box-shadow: 0 2px 10px rgba(56, 189, 248, 0.10);
+  box-shadow: 0 4px 16px 0 #38bdf810;
   border-bottom: 1.5px solid #38bdf820;
   backdrop-filter: blur(8px) saturate(120%);
+  transition: background 0.3s, box-shadow 0.3s;
 }
 
 /* Brand logo */
 .navbar-brand {
-  font-size: 2rem;
-  font-weight: bold;
+  font-size: 2.2rem;
+  font-weight: 900;
   color: #38bdf8;
   user-select: none;
   white-space: nowrap;
+  letter-spacing: 2px;
+  text-shadow: 0 2px 12px #38bdf850;
 }
 
 /* Toggle (hamburger) */
@@ -41,52 +44,45 @@
   cursor: pointer;
   background: none;
   border: none;
-  height: 32px;
+  height: 36px;
   margin-left: auto;
   z-index: 101;
 }
 .navbar-toggle .bar {
-  width: 24px;
-  height: 3px;
+  width: 28px;
+  height: 3.5px;
   background: #facc15;
-  margin: 4px 0;
+  margin: 5px 0;
   border-radius: 2px;
   transition: all 0.3s ease;
-}
-.navbar-toggle.open .bar:nth-child(1) {
-  transform: rotate(45deg) translate(5px, 5px);
-}
-.navbar-toggle.open .bar:nth-child(2) {
-  opacity: 0;
-}
-.navbar-toggle.open .bar:nth-child(3) {
-  transform: rotate(-45deg) translate(5px, -5px);
 }
 
 /* Link container */
 .navbar-links {
   display: flex;
   align-items: center;
-  gap: 32px;
+  gap: 40px;
 }
 
 .navbar-group {
   display: flex;
-  gap: 24px;
+  gap: 28px;
 }
 
 /* Link styles */
 .navbar-links a {
-  font-size: 1rem;
-  color: #e2e8f0;
-  padding: 8px 12px;
-  border-radius: 6px;
-  transition: background 0.3s, color 0.3s;
+  font-size: 1.15rem;
+  color: #e0f2fe;
+  padding: 10px 18px;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: background 0.3s, color 0.3s, box-shadow 0.2s;
 }
 
-.navbar-links a:hover {
-  background-color: #38bdf8;
-  color: #0f172a;
+.navbar-links a:hover, .navbar-links a.active {
+  background: linear-gradient(90deg, #38bdf8 60%, #0ea5e9 100%);
+  color: #fff;
+  box-shadow: 0 2px 8px 0 #38bdf820;
 }
 
 /* Logout */
@@ -94,53 +90,80 @@
   background: none;
   border: none;
   color: #f1f5f9;
-  font-size: 1rem;
-  padding: 8px 12px;
-  border-radius: 6px;
+  font-size: 1.1rem;
+  padding: 10px 18px;
+  border-radius: 8px;
   cursor: pointer;
-  transition: background 0.3s, color 0.3s;
+  font-weight: 600;
+  transition: background 0.3s, color 0.3s, box-shadow 0.2s;
 }
 .logout-button:hover {
-  background-color: #f87171;
+  background: #f87171;
   color: white;
+  box-shadow: 0 2px 8px 0 #f8717130;
 }
 
 /* Responsive */
+@media (max-width: 1200px) {
+  .navbar {
+    max-width: 98vw;
+    padding: 0 16px;
+  }
+  .navbar-links {
+    gap: 24px;
+  }
+  .navbar-brand {
+    font-size: 1.5rem;
+  }
+}
+@media (max-width: 900px) {
+  .navbar {
+    height: 56px;
+    padding: 0 8px;
+  }
+  .navbar-links {
+    gap: 16px;
+  }
+  .navbar-brand {
+    font-size: 1.2rem;
+  }
+}
 @media (max-width: 768px) {
   .navbar {
     flex-wrap: wrap;
     height: auto;
-    padding: 16px 20px;
+    padding: 12px 8px;
   }
-
   .navbar-toggle {
     display: flex;
   }
-
   .navbar-links {
     flex-direction: column;
     align-items: flex-start;
     width: 100%;
-    background-color: #1e293b;
-    border-radius: 0 0 10px 10px;
+    background: linear-gradient(120deg, #1e293b 80%, #38bdf8 100%);
+    border-radius: 0 0 14px 14px;
     margin-top: 12px;
     padding: 16px 0;
     display: none;
+    gap: 0;
+    box-shadow: 0 4px 16px 0 #38bdf810;
   }
-
   .navbar-links.show {
     display: flex;
   }
-
   .navbar-group {
     flex-direction: column;
     width: 100%;
     padding: 0 16px;
+    gap: 0;
   }
-
   .navbar-links a,
   .logout-button {
     width: 100%;
     text-align: left;
+    font-size: 1rem;
+    padding: 12px 0 12px 16px;
+    border-radius: 8px;
   }
 }
