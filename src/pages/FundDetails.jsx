@@ -68,7 +68,17 @@ function FundDetails() {
       alert("Fund saved successfully.");
     } catch (err) {
       console.error("Save error:", err);
-      alert(" Could not save this fund.");
+      // Enhanced error handling for 400 errors
+      if (err.response && err.response.data) {
+        alert(
+          "Could not save this fund: " +
+            (typeof err.response.data === "string"
+              ? err.response.data
+              : JSON.stringify(err.response.data))
+        );
+      } else {
+        alert("Could not save this fund.");
+      }
     } finally {
       setSaving(false);
     }
