@@ -58,12 +58,9 @@ function SavedFunds() {
       // 🔹 Fetch from backend for custom funds
       const fetchCustomFunds = async () => {
         try {
-          const res = await API.get(
-            "/api/funds/custom",
-            {
-              headers: { Authorization: `Bearer ${token}` },
-            }
-          );
+          const res = await API.get("/api/funds/custom", {
+            headers: { Authorization: `Bearer ${token}` },
+          });
 
           return res.data
             .filter((fund) => customIds.includes(fund._id))

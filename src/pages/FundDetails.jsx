@@ -19,12 +19,9 @@ function FundDetails() {
       try {
         if (isCustom) {
           const token = localStorage.getItem("token");
-          const res = await API.get(
-            "/api/funds/custom",
-            {
-              headers: { Authorization: `Bearer ${token}` },
-            }
-          );
+          const res = await API.get("/api/funds/custom", {
+            headers: { Authorization: `Bearer ${token}` },
+          });
           const found = res.data.find((f) => f._id === schemeCode);
           if (!found) {
             setError("Custom fund not found.");

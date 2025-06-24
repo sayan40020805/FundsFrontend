@@ -19,15 +19,11 @@ function AddFund() {
     e.preventDefault();
     try {
       // Step 1: Add custom fund
-      const res = await API.post(
-        "/api/funds/custom",
-        form,
-        {
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
-        }
-      );
+      const res = await API.post("/api/funds/custom", form, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
 
       const newCustomFundId = res.data.fundId; // <-- returned _id from backend
 
