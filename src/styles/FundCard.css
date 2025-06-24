@@ -1,0 +1,94 @@
+.fund-card {
+  background: #fff;
+  border-radius: 18px;
+  padding: 22px 18px 18px 18px;
+  box-shadow: 0 6px 24px 0 #38bdf810, 0 1.5px 8px 0 #38bdf820;
+  margin: 12px auto;
+  max-width: 420px;
+  transition: transform 0.18s cubic-bezier(.4,2,.6,1), box-shadow 0.3s;
+  color: #0f172a;
+  position: relative;
+  overflow: hidden;
+  border: 1.5px solid #e0e7ff;
+}
+
+.fund-card:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 12px 32px 0 #38bdf830, 0 2px 12px 0 #0ea5e930;
+  border: 1.5px solid #38bdf8;
+}
+
+.fund-title {
+  font-size: 1.18rem;
+  margin-bottom: 8px;
+  color: #0ea5e9;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-shadow: 0 1px 6px #38bdf810;
+}
+
+.fund-meta {
+  font-size: 1.01rem;
+  color: #334155;
+  margin-bottom: 8px;
+}
+
+.fund-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 16px;
+  gap: 10px;
+}
+
+/* Buttons */
+.fund-view-button,
+.fund-save-button {
+  padding: 10px 18px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: background 0.3s, color 0.3s, box-shadow 0.2s;
+  box-shadow: 0 1.5px 6px 0 #38bdf820;
+}
+
+/* View Details Button */
+.fund-view-button {
+  background: linear-gradient(90deg, #38bdf8 60%, #0ea5e9 100%);
+  color: #fff;
+}
+
+.fund-view-button:hover {
+  background: linear-gradient(90deg, #0ea5e9 0%, #38bdf8 100%);
+  color: #0f172a;
+}
+
+/* Save Button */
+.fund-save-button {
+  background: linear-gradient(90deg, #22c55e 60%, #16a34a 100%);
+  color: #fff;
+}
+
+.fund-save-button:hover {
+  background: linear-gradient(90deg, #16a34a 0%, #22c55e 100%);
+  color: #0f172a;
+}
+
+@media (max-width: 600px) {
+  .fund-card {
+    padding: 14px 4px 10px 4px;
+    max-width: 98vw;
+  }
+  .fund-title {
+    font-size: 1.05rem;
+  }
+  .fund-meta {
+    font-size: 0.95rem;
+  }
+  .fund-actions {
+    flex-direction: column;
+    gap: 8px;
+  }
+}

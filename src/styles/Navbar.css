@@ -1,0 +1,211 @@
+/* Reset margins and paddings for links */
+.navbar a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.navbar {
+  background: linear-gradient(90deg, #0ea5e9 0%, #38bdf8 100%);
+  color: #fff;
+  padding: 16px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  position: relative;
+  width: 100%;
+  box-shadow: 0 2px 16px 0 #38bdf820;
+  border-radius: 0 0 18px 18px;
+  z-index: 10;
+}
+
+.navbar-brand {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #fff200;
+  letter-spacing: 1px;
+  text-shadow: 0 1px 8px #fff20080;
+}
+
+.navbar-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 38px;
+  height: 38px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin-left: 10px;
+  z-index: 20;
+}
+
+.navbar-toggle .bar {
+  width: 26px;
+  height: 3px;
+  background: #facc15;
+  margin: 4px 0;
+  border-radius: 2px;
+  transition: 0.3s;
+}
+
+.navbar-toggle.open .bar:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+.navbar-toggle.open .bar:nth-child(2) {
+  opacity: 0;
+}
+.navbar-toggle.open .bar:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+.navbar-links {
+  display: flex;
+  gap: 18px;
+  align-items: center;
+  transition: max-height 0.3s, opacity 0.3s;
+}
+
+.navbar-links a {
+  font-size: 1rem;
+  color: #f1f5f9;
+  transition: color 0.3s;
+  padding: 8px 0;
+}
+
+.navbar-links a:hover {
+  color: #38bdf8;
+}
+
+.logout-button {
+  background: none;
+  border: none;
+  color: #f1f5f9;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: color 0.2s;
+  padding: 8px 0;
+}
+.logout-button:hover {
+  color: #f87171;
+}
+
+@media (max-width: 900px) {
+  .navbar {
+    padding: 14px 8px;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 12px 4vw;
+  }
+  .navbar-toggle {
+    display: flex;
+  }
+  .navbar-links {
+    flex-direction: column;
+    align-items: flex-start;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100vw;
+    background: rgba(15, 23, 42, 0.98);
+    box-shadow: 0 8px 24px 0 #38bdf820;
+    border-radius: 0 0 18px 18px;
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 9;
+    gap: 0;
+    transition: max-height 0.3s, opacity 0.3s;
+  }
+  .navbar-links.show {
+    max-height: 400px;
+    opacity: 1;
+    pointer-events: auto;
+    padding: 12px 0 18px 0;
+    gap: 8px;
+  }
+  .navbar-links a, .logout-button {
+    width: 100vw;
+    padding: 12px 24px;
+    font-size: 1.08rem;
+    border-radius: 0;
+    border-bottom: 1px solid #33415544;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 8px 2vw;
+  }
+  .navbar-toggle {
+    display: flex;
+    margin-left: 0;
+    margin-top: 4px;
+  }
+  .navbar-links {
+    flex-direction: column;
+    align-items: flex-start;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100vw;
+    background: rgba(15, 23, 42, 0.98);
+    box-shadow: 0 8px 24px 0 #38bdf820;
+    border-radius: 0 0 18px 18px;
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 9;
+    gap: 0;
+    transition: max-height 0.3s, opacity 0.3s;
+  }
+  .navbar-links.show {
+    max-height: 600px;
+    opacity: 1;
+    pointer-events: auto;
+    padding: 0 0 0 0;
+    gap: 0;
+  }
+  .navbar-links a, .logout-button {
+    width: 100vw;
+    padding: 16px 24px;
+    font-size: 1.08rem;
+    border-radius: 0;
+    border-bottom: 1px solid #33415544;
+    text-align: left;
+    display: block;
+  }
+  /* 3-line menu for phone: group links in 3 lines */
+  .navbar-links.show {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    padding: 0;
+  }
+  .navbar-links.show .navbar-group {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    width: 100vw;
+    border-bottom: 1px solid #33415544;
+  }
+  .navbar-links.show .navbar-group a,
+  .navbar-links.show .navbar-group .logout-button {
+    flex: 1 1 0;
+    text-align: center;
+    border-bottom: none;
+    padding: 16px 0;
+    font-size: 1.08rem;
+    background: none;
+  }
+}

@@ -1,0 +1,124 @@
+.fund-details-container {
+  padding: 40px 16px;
+  min-height: 100vh;
+  background-color: #0f172a; /* Dark navy background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.fund-details-box {
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 6px 24px 0 #38bdf810, 0 1.5px 8px 0 #38bdf820;
+  padding: 32px 24px 24px 24px;
+  max-width: 520px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.fund-details-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #0ea5e9;
+  margin-bottom: 18px;
+  letter-spacing: 0.5px;
+  text-align: center;
+}
+
+.fund-details-meta {
+  font-size: 1.1rem;
+  color: #334155;
+  margin-bottom: 8px;
+  text-align: center;
+}
+
+.fund-details-nav {
+  font-size: 16px;
+  color: #e2e8f0; /* Soft light text */
+  margin-bottom: 12px;
+}
+
+.fund-details-nav strong {
+  color: #7dd3fc; /* Light sky blue for labels */
+}
+
+/* Save + Back Buttons Container */
+.fund-details-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 16px; /* Spacing between Save and Back buttons */
+  align-items: center;
+  margin-top: 20px;
+}
+
+/* Save button */
+.fund-details-save {
+  background-color: #22c55e;
+  color: #0f172a;
+  padding: 10px 18px;
+  margin-right: 20px;
+  font-size: 15px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.fund-details-save:hover {
+  background-color: #16a34a;
+  color: white;
+}
+
+.fund-details-save:disabled {
+  background-color: #4ade80;
+  color: #1e293b;
+  cursor: not-allowed;
+}
+
+/* Back button */
+.fund-details-button {
+  background-color: #0ea5e9; /* Sky */
+  color: #0f172a;
+  padding: 12px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.fund-details-button:hover {
+  background-color: #38bdf8;
+  color: white;
+}
+
+/* Loading or error messages */
+.fund-details-message {
+  font-size: 16px;
+  color: #cbd5e1;
+  text-align: center;
+}
+
+.fund-details-error {
+  color: #ef4444;
+  background: #fee2e2;
+  border-radius: 6px;
+  padding: 8px 12px;
+  margin-bottom: 12px;
+  text-align: center;
+  font-size: 1rem;
+}
+
+@media (max-width: 600px) {
+  .fund-details-box {
+    padding: 16px 4px 10px 4px;
+    max-width: 98vw;
+  }
+  .fund-details-title {
+    font-size: 1.2rem;
+  }
+  .fund-details-meta {
+    font-size: 0.98rem;
+  }
+}
