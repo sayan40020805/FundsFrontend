@@ -6,8 +6,10 @@
 
 /* Main navbar container */
 .navbar {
-  width: 1145px;
-  background-color: #0f172a;
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  background: linear-gradient(90deg, #1e293b 60%, #38bdf8 100%);
   color: #e2e8f0;
   padding: 0 5vw;
   height: 70px;
@@ -17,7 +19,9 @@
   position: sticky;
   top: 0;
   z-index: 1000;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 2px 10px rgba(56, 189, 248, 0.10);
+  border-bottom: 1.5px solid #38bdf820;
+  backdrop-filter: blur(8px) saturate(120%);
 }
 
 /* Brand logo */
